@@ -1,9 +1,8 @@
 #ifndef nonBinaryTree_h
 #define nonBinaryTree_h
 
-#include <stdbool.h>
 #include <stdlib.h>
-
+#include <stdbool.h>
 
 // Struktur data
 typedef struct infotype {
@@ -20,10 +19,6 @@ typedef struct Node {
 	address nextBrother;
 }treeNode;
 
-typedef struct{
-	address root;
-	address current;
-} tree;
 
 // Constructor
 address createTree (infotype value);
@@ -45,11 +40,16 @@ void addSibling (address *brother, address *newBrother);
 
 
 // Read dan Print
+void showNodeByPreOrder (address root);
+/* IS : Info tidak ditampilkan
+ * FS : Info ditampilkan
+*/
+
+address travPostOrder ();
+
 address readNode ();
 
 infotype readInfo ();
-
-address travPostOrder ();
 
 // Getter dan Setter
 infotype getInfo ();
