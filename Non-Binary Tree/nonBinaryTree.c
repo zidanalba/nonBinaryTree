@@ -1,6 +1,7 @@
 #include "nonBinaryTree.h"
 
 #include <stdio.h>
+#include <string.h>
 
 // Constructor
 address createTree (infotype value){
@@ -38,7 +39,42 @@ void showNodeByPreOrder (address root){
 	printf ("\nDone\n ");
 
 }	
-		
+
+void siapaAtasan (address root, char cariNama){
+	char cariNama2 = cariNama;
+	
+	if (root == NULL){
+		return;
+	}
+	
+	if (strcmp(root -> info.nama, cariNama) == 0)
+	{
+		printf ("\nAtasannya adalah %c\n", root -> parent-> info.nama);
+		return ;
+		}
+	
+	siapaAtasan (root -> firstChild, cariNama2);
+	
+	siapaAtasan (root -> nextBrother, cariNama2);
+}
+
+void siapaBawahan (address root, char cariNama){
+		char cariNama2 = cariNama;
+	
+	if (root == NULL){
+		return;
+	}
+	
+	if (strcmp(root -> info.nama, cariNama) == 0)
+	{
+		printf ("\nAtasannya adalah %c\n", root -> firstChild -> info.nama);
+		return ;
+		}
+	
+	siapaAtasan (root -> firstChild, cariNama2);
+	
+	siapaAtasan (root -> nextBrother, cariNama2);
+}
 
 int main (){
 	

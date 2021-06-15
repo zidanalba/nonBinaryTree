@@ -45,8 +45,6 @@ void showNodeByPreOrder (address root);
  * FS : Info ditampilkan
 */
 
-address travPostOrder ();
-
 address readNode ();
 
 infotype readInfo ();
@@ -54,12 +52,13 @@ infotype readInfo ();
 // Getter dan Setter
 infotype getInfo ();
 
+
 void setInfo();
 
 // Modul Penunjang
-infotype siapaAtasan ();
+void siapaAtasan (address root, char cariNama);
 
-infotype siapaBawahan ();
+void siapaBawahan (address root, char cariNama);
 
 address searchJabatan ();
 
