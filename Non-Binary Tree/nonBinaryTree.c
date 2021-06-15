@@ -95,6 +95,6 @@ void searchJabatan (address root, char cariJabatan){
 }
 
 void setInfo(char infoNama, char infoJabatan, address *root){
-	(*root) -> info.nama = infoNama;
-	(*root) -> info.jabatan = infoJabatan;
+	strcpy((*root) -> info.nama, infoNama);
+	strcpy((*root) -> info.jabatan, infoJabatan);
 }
