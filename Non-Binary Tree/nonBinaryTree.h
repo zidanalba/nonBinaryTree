@@ -53,13 +53,23 @@ infotype readInfo ();
 infotype getInfo ();
 
 
-void setInfo();
+void setInfo(char infoNama, char infoJabatan, address *root);
+
 
 // Modul Penunjang
 void siapaAtasan (address root, char cariNama);
+/* IS : Mengirimkan nama yang ingin dicari
+ * FS : Menampilkan siapa parent dari nama tersebut
+*/
 
 void siapaBawahan (address root, char cariNama);
+/* IS : Mengirimkan nama yang ingin dicari
+ * FS : Menampilkan siapa child dari nama tersebut
+*/
 
-address searchJabatan ();
+void searchJabatan (address root, char cariJabatan);
+/* IS : Mengirimkan nama jabatan yang ingin dicari
+ * FS : Menampilkan siapa yang menjabat
+*/
 
 #endif

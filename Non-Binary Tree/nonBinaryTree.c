@@ -59,7 +59,7 @@ void siapaAtasan (address root, char cariNama){
 }
 
 void siapaBawahan (address root, char cariNama){
-		char cariNama2 = cariNama;
+	char cariNama2 = cariNama;
 	
 	if (root == NULL){
 		return;
@@ -67,7 +67,7 @@ void siapaBawahan (address root, char cariNama){
 	
 	if (strcmp(root -> info.nama, cariNama) == 0)
 	{
-		printf ("\nAtasannya adalah %c\n", root -> firstChild -> info.nama);
+		printf ("\nBawahannya adalah %c\n", root -> firstChild -> info.nama);
 		return ;
 		}
 	
@@ -76,6 +76,25 @@ void siapaBawahan (address root, char cariNama){
 	siapaAtasan (root -> nextBrother, cariNama2);
 }
 
-int main (){
+void searchJabatan (address root, char cariJabatan){
+	char cariJabatan2 = cariJabatan;
 	
+	if (root == NULL){
+		return;
+	}
+	
+	if (strcmp(root -> info.jabatan, cariJabatan) == 0)
+	{
+		printf ("%c : %c", root -> info.jabatan, root -> info.nama);
+		return ;
+		}
+	
+	searchJabatan (root -> firstChild, cariJabatan2);
+	
+	searchJabatan (root -> nextBrother, cariJabatan2);
+}
+
+void setInfo(char infoNama, char infoJabatan, address *root){
+	(*root) -> info.nama = infoNama;
+	(*root) -> info.jabatan = infoJabatan;
 }
